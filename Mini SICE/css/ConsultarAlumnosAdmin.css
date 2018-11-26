@@ -1,0 +1,147 @@
+
+#tblAlumnos { 
+	overflow: auto;
+	padding: 0; 
+	width: 90%; 
+	margin-bottom: 40px; 
+	margin-left: 40px;
+	
+}
+
+#tblAlumnos form { 
+	margin: 0px; 
+	padding: 0px; 
+	width: 85px;
+}
+
+#tblAlumnos form .input_field { 
+	width: 270px; 
+	
+	color: #333;  
+	background: #fff; 
+	border: 1px solid #dedede; 
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	
+}
+
+  label { 	
+	font-size: 16px;
+	margin-left: 10px;	
+
+}
+
+#tblAlumnos form textarea { 
+	width: 390px; 
+	height: 200px; 
+	padding: 5px; 
+	color: #333;
+	background: #fff; 
+	border: 1px solid #dedede; 
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+#tblAlumnos form .submit_btn { 
+	display: block; 
+	width: 80px; 
+	height: 25px; 
+	background: url(../images/templatemo_button_02.png); 
+	border: 1px solid #bb4d17; 
+	color: #fff; 
+	font-size:13px;
+	border: none; 
+	
+}
+
+
+.float_btnl { 
+	float: left;
+	border-right: 1px;
+	border-right-style: dashed;
+	width: 100px;
+
+	}
+.float_btnr { 
+	float: right ;
+	width: 100px;
+}
+
+#tblAlumnos table {
+   
+   /*border: 0px solid #999 ;*/
+   width: 95%;
+   
+   text-align: left;
+   border-collapse: collapse;
+   margin: 0 0 1em 1em;
+   caption-side: top;
+}
+
+tbody {
+}
+
+#tblAlumnos caption, td, th {
+   padding: 0.4em;
+}
+
+#tblAlumnos th, td {
+
+	/*max-width: 50px;*/
+   border-bottom: 1px solid #999;
+   
+}
+
+
+#tblAlumnos th {	
+	
+	
+
+	color: black;
+	background-color: #D2D1D1;
+   
+}
+
+
+#tblAlumnos caption {
+   font-weight: bold;
+   font-style: italic;
+
+}
+
+#tblAlumnos input{
+	margin-bottom: 5px;
+	border: none;
+	border-bottom: 2px;
+	border-bottom-color: #C3C3C3;
+	border-bottom-style: solid;
+	background: none;
+	text-align: center;
+	font-family: cursive;
+	font-size: 15px;
+
+}
+
+
+#tblAlumnos select{
+	border:dashed;
+}
+
+#tblAlumnos select{
+	border:none;
+}
+
+#tblAlumnos button{
+	border:none;
+}
+
+#tblAlumnos tr{
+	transition: all .5 ease-in;	
+	transform: scale(1);
+}
+
+#tblAlumnos tr:hover{
+	transform: scale(1.03);
+	border-bottom-color: #B6B6B6;
+}

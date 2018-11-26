@@ -1,0 +1,114 @@
+
+
+#contact_form_Alumno input {
+	margin-bottom: 8px;
+	margin-left: 4px;
+	border: none;
+	border-bottom: 2px;
+	border-bottom-color: #C3C3C3;
+	border-bottom-style: solid;
+	background: none;
+	text-align: center;
+	font-family: inherit;
+	font-size: 15px;
+
+}
+
+
+#contact_form_Alumno select {
+	margin-bottom: 5px;
+	border: none;
+	border-bottom: 2px;
+	border-bottom-color: #C3C3C3;
+	border-bottom-style: solid;
+	background: none;
+	text-align: center;
+	font-family: inherit;
+	font-size: 15px;
+	margin-left: 5px;
+
+}
+
+
+
+#contact_form_Alumno select:hover {
+	transform: scale(1.06);
+
+}
+
+
+#contact_form_Alumno input:hover{
+	transform: scale(1.06); 
+}
+
+
+
+#contact_form_Alumno { 
+	padding: 0; 
+	width: 90%; 
+	margin-bottom: 40px; 
+	
+}
+
+#contact_form_Alumno form { 
+	margin: 0px; 
+	padding: 0px; 
+}
+
+#contact_form_Alumno form .input_field { 
+	width: 270px; 
+	padding: 5px; 
+	color: #333;  
+	background: #fff; 
+	border: 1px solid #dedede; 
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+#contact_form_Alumno form label { 
+	display: block; 
+	width: 100px; 
+	margin-right: 12px; 
+	font-size: 12px; 
+}
+
+#contact_form_Alumno form textarea { 
+	width: 390px; 
+	height: 200px; 
+	padding: 5px; 
+	color: #333;
+	background: #fff; 
+	border: 1px solid #dedede; 
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+#contact_form_Alumno form .submit_btn { 
+	display: block; 
+	width: auto; 
+	height: 25px; 
+	background: url(../images/templatemo_button_02.png); 
+	border: 1px solid #bb4d17; 
+	color: #fff; 
+	font-size:13px;
+	border: none; 
+	margin: 10px 0px;
+}
+#contact_form_Alumno table {
+   width: 100%;
+   border: 0px solid #999;
+   text-align: left;
+   border-collapse: collapse;
+   margin: 0 0 1em 0;
+   caption-side: top;
+}
+
+
+
+
+#contact_form_Alumno caption {
+   font-weight: bold;
+   font-style: italic;
+}
