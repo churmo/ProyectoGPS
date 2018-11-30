@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerramientaEstimacionDeTiempo", "HerramientaEstimacionDeTiempo\HerramientaEstimacionDeTiempo.csproj", "{D12E8768-8B32-490B-A885-9FD615C128EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{A5489E1D-405C-434E-9C5B-789D8EAD6CEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D12E8768-8B32-490B-A885-9FD615C128EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12E8768-8B32-490B-A885-9FD615C128EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12E8768-8B32-490B-A885-9FD615C128EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12E8768-8B32-490B-A885-9FD615C128EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5489E1D-405C-434E-9C5B-789D8EAD6CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5489E1D-405C-434E-9C5B-789D8EAD6CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5489E1D-405C-434E-9C5B-789D8EAD6CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5489E1D-405C-434E-9C5B-789D8EAD6CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
