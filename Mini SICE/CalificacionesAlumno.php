@@ -1,9 +1,10 @@
 
 
 <?php 
-            $id=3;
+  session_start();
+          $id=$_GET["id"];
            $connect = mysqli_connect("localhost", "root", "", "escuela");  
-           $sql = "SELECT * from calificaciones c join materias m on c.idMaterias= m.idMaterias where idAlumnos =2 ORDER by m.idMaterias";  
+           $sql = "SELECT * from calificaciones c join materias m on c.idMaterias= m.idMaterias where idAlumnos =$id ORDER by m.idMaterias";  
            mysqli_set_charset($connect, 'utf8');
            $result = mysqli_query($connect, $sql);
 
@@ -70,10 +71,7 @@ ddsmoothmenu.init({
 	<div id="site_title"><h1><a href="#">Carousel Template</a></h1></div>
      <div id="templatemo_menu" class="ddsmoothmenu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="about.html">Información</a>           
-            <li><a href="contact.html">Calificaciones</a></li>
-            <li><a href="contact.html" class="selected">Alumno</a></li>
+            <li><a href="index.html">Inicio</a></li>         
         </ul>
         <br style="clear: left" />
     </div> <!-- end of templatemo_menu -->
@@ -84,10 +82,21 @@ ddsmoothmenu.init({
 	
     <h2>Calificaciones del Alumno</h2>
         <div class="half float_l">
-        <h4><center>Jared Efrain Ramirez Diaz </center></h4>
-            <p><b>Ciclo Escolar:</b> Febrero 2018 - Diciembre 2018 <br />
-            <b>Maestro:</b> Quintana Martinez Nancy Carolina</p>
+        <h4><center><?php echo $_GET["nombre"]; ?></center></h4>
             
+              <b>Maestro:</b>
+                <?php 
+                
+                $mysql = new mysqli("127.0.0.1:3306","root","","escuela");
+                $listaUser=$mysql->query("select * from maestros where idMaestros in (select idMaestros from imparten where Anio like '2017' and Grupo like 'b');"); 
+                
+                
+                 $linea = $listaUser-> fetch_row();
+
+                 echo $linea[3]." ".$linea[4]." ".$linea[5];
+                 ?> <br />
+              <br />
+
             <div id="tblCalificacionesAlumno">
              
                 
@@ -138,37 +147,44 @@ ddsmoothmenu.init({
                     <td><center>0</center></td>
                     <td><center>0.0</center></td>
                 </tr></table>
-                <label onclick="crearTabla('tblCalificacionesAlumno')">hola?</label>
+                <label oncanplay ="crearTabla('tblCalificacionesAlumno')"></label>
             </div>
 		</div>
         <div class="half float_r">
         	<h4>Datos del alumno:</h4>
+          
             <h6><strong>Datos personales</strong></h6>
-          		<b>Nombre:</b> Efrain Jared Ramirez Diaz<br />
-                <b>Grado:</b> 1° <b>Grupo:</b> C<br />
-                <b>Maestro:</b> German Guzman Guzman<br />
-                <b>Estatus:</b> Activo<br />
+          		<b>Nombre:</b> <?php echo $_GET["nombre"]; ?> <br />
+                <b>Grado:</b> <?php echo $Grad= $_SESSION["obj"]['Grado']; ?> <b>Grupo:</b> <?php echo $Grup = $_SESSION["obj"]['Grupo']; ?><br />
+                <b>Maestro:</b>
+                <?php 
+                
+                $mysql = new mysqli("127.0.0.1:3306","root","","escuela");
+                $listaUser=$mysql->query("select * from maestros m join imparten i on m.idMaestros=i.idMaestros join materias ma on i.idMaterias=ma.idMaterias where Anio like '%2017%' and Grupo like '$Grup' and grado like '$Grad' group by m.idMaestros "); 
+                
+               
+                foreach ($listaUser as $user ) {
+                  echo $user["Nombre"]. " ".$user["ApellidoPaterno"]. " " .$user["ApellidoMaterno"];
+
+                  
+                }
+                
+                 
+                 ?> <br />
+                
           
 				
 			<br />
             <div class="vertical-menu">
                 <!-- <a class="active" style="height: 0px;padding: 3px;"></a> -->
-              <a href="index.html" >Inicio</a>
-              <a href="#">Datos del alumno</a>
+              
+              
               
                 <!--<a href="" onclick="myFunction()">Calificaciones</a> -->
 
                 <button onmouseenter="myFunction()" onmouseleave ="drop()" class="active">Calificaciones</button>  
                 
-                <div onmouseenter="myFunction()" onmouseleave="drop()" id="myDropdown" class="dropdown-content">
-                  <a href="#"  >1er Año</a>
-                  <a href="#">2do Año</a>
-                  <a href="#" class="active">3er Año</a>
-                  <a href="#">4to Año</a>
-                  <a href="#">5to Año</a>
-                  <a href="#">6to Año</a>
-              </div>
-                
+                                
                 <script>/* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -200,8 +216,7 @@ window.onclick = function(event) {
   }
 }</script>
               
-              <a href="#">Boletas</a>
-              <a href="#">Salir</a>
+              <a href="login.php">Salir</a>
             </div>
             <div class="cleaner h40"></div>
             <!-- <h6><strong>Location Two</strong></h6>
@@ -213,13 +228,10 @@ window.onclick = function(event) {
             <strong>Email:</strong> <a href="mailto:info@company.com">two@company.com</a>  <br />
              -->
             <div class="cleaner h40"></div>
-            <h6><strong>Location Three</strong></h6>
-   		  420-630 Donec scelerisque eleifend,<br />
-                Nulla nec leo sit 11990<br />
-                Habitant Morbi<br /><br />
+           
 				
-			<strong>Phone:</strong> 030-080-0220 <br />
-            <strong>Email:</strong> <a href="mailto:info@company.com">three@company.com</a>  <br />
+			
+            
             
         </div>
         
@@ -282,3 +294,4 @@ window.onclick = function(event) {
 
 </body>
 </html>
+<script >crearTabla('tblCalificacionesAlumno')</script>

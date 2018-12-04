@@ -8,7 +8,7 @@ if ($conexion) {
 
 }else{
 
-    // echo "Conexion fallida";
+     // echo "Conexion fallida";
 
 }
 

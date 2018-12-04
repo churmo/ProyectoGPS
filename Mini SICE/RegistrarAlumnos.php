@@ -1,4 +1,4 @@
-////
+<?php session_start() ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -55,10 +55,8 @@ ddsmoothmenu.init({
      <div id="templatemo_menu" class="ddsmoothmenu">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
-            <li><a href="about.html">Información</a>           
-            <!-- <li><a href="blog.html">Iniciar Sesión</a></li> -->
-            <li><a href="#">Calificaciones</a> 
-            <li><a href="Calificaciones-Maestro.html" class="selected">Admin
+            
+            <li><a href="ConsultarAlumnosAdmin.php" class="selected">Admin
             </a></li>
             	
         </ul>
@@ -71,9 +69,7 @@ ddsmoothmenu.init({
 	
     <h2>Registrar Alumno</h2>
         <div class="half float_l">
-        <h4><center>Quintana Martinez Nancy Carolina </center></h4>
-            <p><b>Ciclo Escolar:</b> Febrero 2018 - Diciembre 2018 <br />
-            <b>Grupo:</b> 1° C</p>
+     
             <div id="contact_form_Alumno">
               <form method="post" class="contact_form" name="contact" action="agregarProducto.php" style="width: 400px; margin-left: 40px;">
                 
@@ -113,6 +109,15 @@ ddsmoothmenu.init({
                         <option>30
                         <option>31
                         </Select>
+
+                        <select name="asdf" id="asdf">
+
+
+
+
+                        </select>
+
+
 
                         <Select name="fechaMes"  class="boton">
                         <option>Enero
@@ -184,58 +189,20 @@ ddsmoothmenu.init({
             </div>
 		</div>
         <div class="half float_r">
-        	<h4>Datos del Maestro:</h4>
-            <h6><strong>Datos personales</strong></h6>
-          		<b>Nombre:</b> Quintana Martinez Nancy Carolina<br />
-                <b>Clase: </b> 1°  C<br />                
-                <b>Estatus:</b> Activo<br />
+        	<h4>Datos del Admin:</h4>
+            <h6><strong><?php echo $_SESSION["obj"]["Nombre"]." ". $_SESSION["obj"]["ApellidoPaterno"]. " " .$_SESSION["obj"]["ApellidoMaterno"] ?></strong></h6>
+          		
+               
           
 				
 			<br />
              <div class="vertical-menu">
-              <a href="#" >Inicio</a>
-              <a href="ConsultarAlumnosAdmin.php" >Gestionar Alumnos</a>
-              <a href="RegistrarAlumnos.php" class="active">Registrar Alumnos</a>
+         <a href="ConsultarAlumnosAdmin.php"  >Gestionar Alumnos</a>
+              <a href="RegistrarAlumnos.php"class="active" >Registrar Alumnos</a>
               <a href="RegistrarMaestro.php" >Registrar Maestros</a>
-              
-                <!--<a href="" onclick="myFunction()">Calificaciones</a> -->
-
-                
-                <script>/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-
-
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-function drop(){
-     var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-}
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}</script>
-              
-              <a href="#">Boletas</a>
-              <a href="login.php">Salir</a>
+              <a href="RegistrarMateria.php" >Registrar Materias</a>
+              <a href="Estadisticas.php" >Mejores Promedios</a>
+              <a href="login.php" >Salir</a>
             </div>
             <div class="cleaner h40"></div>
             <!-- <h6><strong>Location Two</strong></h6>
@@ -247,14 +214,7 @@ window.onclick = function(event) {
             <strong>Email:</strong> <a href="mailto:info@company.com">two@company.com</a>  <br />
              -->
             <div class="cleaner h40"></div>
-            <h6><strong>Location Three</strong></h6>
-   		  420-630 Donec scelerisque eleifend,<br />
-                Nulla nec leo sit 11990<br />
-                Habitant Morbi<br /><br />
-				
-			<strong>Phone:</strong> 030-080-0220 <br />
-            <strong>Email:</strong> <a href="mailto:info@company.com">three@company.com</a>  <br />
-            
+           
         </div>
         
         <div class="cleaner h40"></div>

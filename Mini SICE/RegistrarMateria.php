@@ -55,8 +55,7 @@ ddsmoothmenu.init({
      <div id="templatemo_menu" class="ddsmoothmenu">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
-            
-            
+           
             <li><a href="ConsultarAlumnosAdmin.php" class="selected">Admin
             </a></li>
             	
@@ -68,111 +67,62 @@ ddsmoothmenu.init({
 
 <div id="templatemo_main">
 	
-    <h2>Registrar Maestro</h2>
+    <h2>Registrar Materia</h2>
         <div class="half float_l">
-       
+      
             <div id="contact_form_Alumno">
-              <form style="width: 400px; margin-left: 40px;" class="contact_form">
+              <form method="post" name="contact" action="agregarMateria.php" >
                 
-                         Apellido Paterno: <input type="text" id="AP" name="Apellido_Paterno" onchange="validarTexto(this.id)"  ><br />
-                    Apellido Materno: <input type="text" id="AM"  name="Apellido_Materno" onchange="validarTexto(this.id)"><br />
-                    Nombre: <input type="text" id="N" style="width: 240px" name="Nombre" onchange="validarTexto(this.id)""><br/>
-                    Nivel de Estudios:  <Select id="Nivel" class="boton">
-                        <option>Bachillerato
-                        <option>Licenciatura
-                        <option>Ingenieria
-                        <option>Especialidad
-                        <option>Maestria
-                        <option>Doctorado
-                        </select>
-                        
-                        &nbsp Sexo:  <Select  id="Sexo" class="boton">
-                        <option>Masculino
-                        <option>Femenino
-                        
-                        </Select>
-                        <br />
-                    Domicilio: <input type="text" id="Do" style="width: 260px;" name="Domicilio" onchange="validarDireccion(this.id)"  /><br />
+                    Nombre de la materia: <input type="text" name="nombre" id="Apellido Paterno" onchange="validarTexto('Apellido Paterno')"  ><br />
                     
-                    Telefono: <input type="text" id="Te" style="width: 160px;" name="Telefono" onchange="validarTelefono(this.id)" />   <br />   
+                         Grado:  <Select name="grado" class="boton" id="Grado">
 
-                     Correo Electronico: <input type="text" id="CE" style="width: 250px;" name="Correo_Electronico" onchange="validarMail(this.id)" /><br />        
-                    Estatus:<Select id="Sta" name="Estatus" class="boton" >
-
-                        <option>Activo
-                        <option>Baja
-                        <option>Baja Temporal
-                        
-                        
+                        <option value="primero">Primero
+                        <option value="segundo">Segundo
+                        <option value="tercero">Tercero
+                        <option value="cuarto">Cuarto
+                        <option value="quinto">Quinto
+                        <option value="seto">Sexto
                         </Select>
-                
-                </form>
+                        Tipo de materia:  &nbsp&nbsp
+                    <Select name="tipo" class="boton" id="Grupo">
+
+                        <option value="normal">Normal
+                        <option value="especial">Especial
+                        <option value="Extracurricular">Estracurricular
+                        </Select>
+                       
+                        
                         
                         
                         <div class="cleaner h10"></div>
                         
                        
-                         
-                      
                         
-                        <center>
-                       <button onclick="AgregarMaestro()">Guardar</button>
-                       </center>
-                <script>
-                           function AgregarMaestro(){
+                        <input type="submit" value="Guardar" id="reset" name="reset"  class="submit_btn float_r" />
+                        
+                        
+                </form>
 
-                            if (confirm('¿Estas seguro que deseas guardar cambios? ')) {
-                                
-                var AP = document.getElementById("AP").value;
-                var AM = document.getElementById("AM").value;
-                var N = document.getElementById("N").value;
-                
-                
-                var Do = document.getElementById("Do").value;
-                
-                
-                
-                var Te = document.getElementById("Te").value;
-                var CE = document.getElementById("CE").value;
-                
-                var Sta = document.getElementById("Sta").options[document.getElementById("Sta").selectedIndex].value;
-                
-                var nivel = document.getElementById("Nivel").options[document.getElementById("Nivel").selectedIndex].value;
-
-                var sexo = document.getElementById("Sexo").options[document.getElementById("Sexo").selectedIndex].value;
-
-
-
-
-                var concat = "&AP="+AP+"&AM="+AM+"&N="+N+"&Te="+Te+"&CE="+CE+"&Sta="+Sta+"&Nivel="+nivel+"&Sexo="+sexo+"&Sta="+Sta+"&Do="+Do;
-                location.href="InsertarMaestro.php?"+concat;
-                            
-
-                        }
-                           }
-                       </script>
                 
             </div>
 		</div>
         <div class="half float_r">
         	<h4>Datos del Admin:</h4>
             <h6><strong><?php echo $_SESSION["obj"]["Nombre"]." ". $_SESSION["obj"]["ApellidoPaterno"]. " " .$_SESSION["obj"]["ApellidoMaterno"] ?></strong></h6>
-                
-               
           
 				
 			<br />
-            <div class="vertical-menu">
-              <a href="ConsultarAlumnosAdmin.php"  >Gestionar Alumnos</a>
+            
+             <div class="vertical-menu">
+              
+              <a href="ConsultarAlumnosAdmin.php" >Gestionar Alumnos</a>
               <a href="RegistrarAlumnos.php" >Registrar Alumnos</a>
-              <a href="RegistrarMaestro.php" class="active">Registrar Maestros</a>
-              <a href="RegistrarMateria.php" >Registrar Materias</a>
+              <a href="RegistrarMaestro.php" >Registrar Maestros</a>
+              <a href="RegistrarAlumnos.php" class="active">Registrar Materias</a>
               <a href="Estadisticas.php" >Mejores Promedios</a>
               <a href="login.php" >Salir</a>
               
-                <!--<a href="" onclick="myFunction()">Calificaciones</a> -->
-
-               
             </div>
             <div class="cleaner h40"></div>
             <!-- <h6><strong>Location Two</strong></h6>

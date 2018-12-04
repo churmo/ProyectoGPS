@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+
+
+session_start();
+
+
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -55,8 +61,7 @@ ddsmoothmenu.init({
      <div id="templatemo_menu" class="ddsmoothmenu">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
-            
-            
+           
             <li><a href="ConsultarAlumnosAdmin.php" class="selected">Admin
             </a></li>
             	
@@ -68,111 +73,39 @@ ddsmoothmenu.init({
 
 <div id="templatemo_main">
 	
-    <h2>Registrar Maestro</h2>
+    <h2>Mejores Promedios por año</h2>
         <div class="half float_l">
-       
+      
             <div id="contact_form_Alumno">
-              <form style="width: 400px; margin-left: 40px;" class="contact_form">
-                
-                         Apellido Paterno: <input type="text" id="AP" name="Apellido_Paterno" onchange="validarTexto(this.id)"  ><br />
-                    Apellido Materno: <input type="text" id="AM"  name="Apellido_Materno" onchange="validarTexto(this.id)"><br />
-                    Nombre: <input type="text" id="N" style="width: 240px" name="Nombre" onchange="validarTexto(this.id)""><br/>
-                    Nivel de Estudios:  <Select id="Nivel" class="boton">
-                        <option>Bachillerato
-                        <option>Licenciatura
-                        <option>Ingenieria
-                        <option>Especialidad
-                        <option>Maestria
-                        <option>Doctorado
-                        </select>
+             
                         
-                        &nbsp Sexo:  <Select  id="Sexo" class="boton">
-                        <option>Masculino
-                        <option>Femenino
-                        
-                        </Select>
-                        <br />
-                    Domicilio: <input type="text" id="Do" style="width: 260px;" name="Domicilio" onchange="validarDireccion(this.id)"  /><br />
-                    
-                    Telefono: <input type="text" id="Te" style="width: 160px;" name="Telefono" onchange="validarTelefono(this.id)" />   <br />   
+              
+           
+          <?php include ("MejoresPromedios.php"); ?>
+          <br>
+          <?php include ("MejoresPromediosSegundo.php"); ?>
+          <br>
+          <?php include ("MejoresPromediosTercero.php"); ?>
 
-                     Correo Electronico: <input type="text" id="CE" style="width: 250px;" name="Correo_Electronico" onchange="validarMail(this.id)" /><br />        
-                    Estatus:<Select id="Sta" name="Estatus" class="boton" >
-
-                        <option>Activo
-                        <option>Baja
-                        <option>Baja Temporal
-                        
-                        
-                        </Select>
-                
-                </form>
-                        
-                        
-                        <div class="cleaner h10"></div>
-                        
-                       
-                         
-                      
-                        
-                        <center>
-                       <button onclick="AgregarMaestro()">Guardar</button>
-                       </center>
-                <script>
-                           function AgregarMaestro(){
-
-                            if (confirm('¿Estas seguro que deseas guardar cambios? ')) {
-                                
-                var AP = document.getElementById("AP").value;
-                var AM = document.getElementById("AM").value;
-                var N = document.getElementById("N").value;
-                
-                
-                var Do = document.getElementById("Do").value;
-                
-                
-                
-                var Te = document.getElementById("Te").value;
-                var CE = document.getElementById("CE").value;
-                
-                var Sta = document.getElementById("Sta").options[document.getElementById("Sta").selectedIndex].value;
-                
-                var nivel = document.getElementById("Nivel").options[document.getElementById("Nivel").selectedIndex].value;
-
-                var sexo = document.getElementById("Sexo").options[document.getElementById("Sexo").selectedIndex].value;
-
-
-
-
-                var concat = "&AP="+AP+"&AM="+AM+"&N="+N+"&Te="+Te+"&CE="+CE+"&Sta="+Sta+"&Nivel="+nivel+"&Sexo="+sexo+"&Sta="+Sta+"&Do="+Do;
-                location.href="InsertarMaestro.php?"+concat;
-                            
-
-                        }
-                           }
-                       </script>
-                
+                </table>
             </div>
 		</div>
         <div class="half float_r">
         	<h4>Datos del Admin:</h4>
             <h6><strong><?php echo $_SESSION["obj"]["Nombre"]." ". $_SESSION["obj"]["ApellidoPaterno"]. " " .$_SESSION["obj"]["ApellidoMaterno"] ?></strong></h6>
-                
-               
           
 				
 			<br />
-            <div class="vertical-menu">
-              <a href="ConsultarAlumnosAdmin.php"  >Gestionar Alumnos</a>
+            
+             <div class="vertical-menu">
+              
+              <a href="ConsultarAlumnosAdmin.php" >Gestionar Alumnos</a>
               <a href="RegistrarAlumnos.php" >Registrar Alumnos</a>
-              <a href="RegistrarMaestro.php" class="active">Registrar Maestros</a>
+              <a href="RegistrarMaestro.php" >Registrar Maestros</a>
               <a href="RegistrarMateria.php" >Registrar Materias</a>
-              <a href="Estadisticas.php" >Mejores Promedios</a>
+              <a href="Estadisticas.php" class="active" >Mejores Promedios</a>
               <a href="login.php" >Salir</a>
               
-                <!--<a href="" onclick="myFunction()">Calificaciones</a> -->
-
-               
             </div>
             <div class="cleaner h40"></div>
             <!-- <h6><strong>Location Two</strong></h6>

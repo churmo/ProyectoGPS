@@ -56,10 +56,8 @@ ddsmoothmenu.init({
      <div id="templatemo_menu" class="ddsmoothmenu">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
-            <li><a href="about.html">Información</a>           
-            <!-- <li><a href="blog.html">Iniciar Sesión</a></li> -->
-            <li><a href="#">Calificaciones</a> 
-            <li><a href="Calificaciones-Maestro.html" class="selected">Admin
+        
+            <li><a href="ConsultarAlumnosAdmin.php" class="selected">Admin
             </a></li>
             	
         </ul>
@@ -72,9 +70,7 @@ ddsmoothmenu.init({
 	
     <h2>Gestionar Alumnos</h2>
         <div class="half float_l">
-        <h4><center>Quintana Martinez Nancy Carolina </center></h4>
-            <p style="margin-left: 30px;"><b>Ciclo Escolar:</b> Febrero 2018 - Diciembre 2018 <br />
-                 
+        
                 <b>&nbspFiltrar por:</b>
                 <center>                    
                    
@@ -178,50 +174,14 @@ ddsmoothmenu.init({
 
             <br />
                       <div class="vertical-menu">
-              <a href="#" >Inicio</a>
-              <a href="ConsultarAlumnosAdmin.php" class="active">Gestionar Alumnos</a>
-              <a href="RegistrarAlumnos.php">Registrar Alumnos</a>
+  
+              <a href="ConsultarAlumnosAdmin.php" class="active" >Gestionar Alumnos</a>
+              <a href="RegistrarAlumnos.php" >Registrar Alumnos</a>
               <a href="RegistrarMaestro.php" >Registrar Maestros</a>
+              <a href="RegistrarMateria.php" >Registrar Materias</a>
+              <a href="Estadisticas.php" >Mejores Promedios</a>
+              <a href="login.php" >Salir</a>
               
-              
-                <!--<a href="" onclick="myFunction()">Calificaciones</a> -->
-
-                
-                <script>/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-
-
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-function drop(){
-     var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-}
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}</script>
-              
-              <a href="#">Boletas</a>
-              <a href="login.php">Salir</a>
             </div>
         </div>
 
@@ -237,13 +197,7 @@ window.onclick = function(event) {
             <strong>Email:</strong> <a href="mailto:info@company.com">two@company.com</a>  <br />
              -->
             <div class="cleaner h40"></div>
-            <h6><strong>Location Three</strong></h6>
-   		  420-630 Donec scelerisque eleifend,<br />
-                Nulla nec leo sit 11990<br />
-                Habitant Morbi<br /><br />
-				
-			<strong>Phone:</strong> 030-080-0220 <br />
-            <strong>Email:</strong> <a href="mailto:info@company.com">three@company.com</a>  <br />
+           
             
         </div>
         
